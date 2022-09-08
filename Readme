@@ -7,8 +7,9 @@ mvvm
 aidl
 协程
 动画
-fragment切换
+fragment底部按钮切换
 现在支付sdk接入demo
 AsyncTask
 ThreadLocal
 ThreadPool
+自定义view 
