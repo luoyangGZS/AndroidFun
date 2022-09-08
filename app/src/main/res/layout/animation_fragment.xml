@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_primary_background">
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary_button"
+        android:text="开启帧动画"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/stop_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary_tip"
+        android:text="关闭帧动画"
+        app:layout_constraintTop_toBottomOf="@+id/start_button"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_search_bar"
+        android:textColor="@color/base_common_white"
+        app:layout_constraintTop_toBottomOf="@+id/stop_button" />
+
+    <Button
+        android:id="@+id/translate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:background="@color/color_primary_tip"
+        android:text="平移"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/scale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:background="@color/color_primary_tip"
+        android:text="缩放"
+        app:layout_constraintLeft_toRightOf="@+id/translate"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/rotate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:background="@color/color_primary_tip"
+        android:text="旋转"
+        app:layout_constraintLeft_toRightOf="@+id/scale"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/alpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:background="@color/color_primary_tip"
+        android:text="透明"
+        app:layout_constraintLeft_toRightOf="@+id/rotate"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/color_primary_tip"
+        android:text="组合"
+        app:layout_constraintLeft_toRightOf="@+id/translate"
+        app:layout_constraintTop_toBottomOf="@+id/translate"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/interpolator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/color_primary_tip"
+        android:text="自定义插值器"
+        app:layout_constraintLeft_toRightOf="@+id/scale"
+        app:layout_constraintTop_toBottomOf="@+id/set"
+        tools:ignore="MissingConstraints" />
+
+    <com.luoyang.androidfunDemo.animation.MyView
+        android:id="@+id/evaluator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/set"
+        app:layout_constraintLeft_toRightOf="@+id/translate"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/value_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/color_primary_tip"
+        android:text="value"
+        app:layout_constraintLeft_toRightOf="@+id/scale"
+        app:layout_constraintTop_toBottomOf="@+id/interpolator"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/object_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/color_primary_tip"
+        android:text="object_animator"
+        app:layout_constraintLeft_toRightOf="@+id/scale"
+        app:layout_constraintTop_toBottomOf="@+id/value_animation"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

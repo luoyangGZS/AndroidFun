@@ -1,0 +1,112 @@
+plugins {
+    // 当成组件库
+//    id 'com.android.library'
+    // 独立应用
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.luoyang.androidfunDemo"
+        minSdk 29
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+
+
+        //友盟AppKey相关
+        buildConfigField "String", "UM_APP_KEY", "\"62d7d8e288ccdf4b7ed8c639\""
+    }
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets{
+        main{
+            jniLibs.srcDirs=['libs']
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation project(path: ':note')
+    implementation project(path: ':base')
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
+    implementation 'androidx.activity:activity-compose:1.4.0'
+    implementation 'junit:junit:4.13.2'
+
+    // Optional -- Mockito framework（可选，用于模拟一些依赖对象，以达到隔离依赖的效果）
+    testImplementation "org.mockito:mockito-core:1.10.19"
+    //kotlin mock
+    testImplementation "io.mockk:mockk:1.12.1"
+
+    implementation 'com.google.firebase:firebase-installations:17.0.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //底部json动画
+    implementation 'com.airbnb.android:lottie:5.2.0'
+    //compose
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
+    // Integration with ViewModels
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.5.0-rc02'
+
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+//    implementation 'com.lzy.net:okgo:3.0.4'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+
+    // 内存泄露检查
+     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.1'
+    // 导入libs目录下所有包
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+}

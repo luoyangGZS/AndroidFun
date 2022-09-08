@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/note_content"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0" />
+
+    <TextView
+        android:id="@+id/tv_empty"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:gravity="center"
+        android:text="还没有一条笔记" />
+
+    <Button
+        android:id="@+id/add_note"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="添加笔记" />
+
+    <Button
+        android:id="@+id/jump_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转其他界面"
+        android:visibility="gone" />
+</LinearLayout>

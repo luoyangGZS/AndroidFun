@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <translate
+        android:duration="3000"
+        android:repeatCount="3"
+        android:startOffset="1000"
+        android:repeatMode="restart"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        android:toXDelta="900"
+        android:toYDelta="600" />
+
+<!--    <rotate-->
+<!--        android:duration="3000"-->
+<!--        android:fromDegrees="0"-->
+<!--        android:pivotX="50%"-->
+<!--        android:pivotY="50%"-->
+<!--        android:repeatCount="3"-->
+<!--        android:repeatMode="restart"-->
+<!--        android:toDegrees="360" />-->
+</set>

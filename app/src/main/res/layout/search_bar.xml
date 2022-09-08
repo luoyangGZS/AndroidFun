@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_state_bar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/base_common_white" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/fr_left"
+            android:layout_width="@dimen/search_bar_back_layout_width"
+            android:layout_height="@dimen/search_bar_back_layout_height"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/view_ripple_borderless">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/search_bar_icon"
+                android:layout_height="@dimen/search_bar_icon"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="@dimen/search_margin_right"
+                android:background="@drawable/ic_toolbar_search_back" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fr_right"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/search_bar_right_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/search_bar_space"
+            android:layout_marginEnd="@dimen/group_layout_end"
+            android:background="@drawable/view_ripple_borderless">
+
+            <TextView
+                android:id="@+id/iv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/search_text"
+                android:textColor="@color/color_primary_text_first"
+                android:textSize="@dimen/dimen_primary_text_five"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/search_bar_content_height"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/fr_right"
+            android:layout_toRightOf="@id/fr_left"
+            android:background="@drawable/shape_search_edit"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/search_bar_icon"
+                android:layout_height="@dimen/search_bar_icon"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/search_bar_space"
+                android:layout_marginEnd="@dimen/search_bar_space"
+                android:src="@drawable/ic_search_normal" />
+
+            <EditText
+                android:id="@+id/edit_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/search_bar_space"
+                android:layout_weight="1"
+                android:background="@color/color_primary_tip"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:textColor="@color/color_primary_text_first"
+                android:textColorHint="@color/color_primary_text_second"
+                android:textCursorDrawable="@drawable/cursor_tyle"
+                android:textSize="@dimen/dimen_primary_text_five" />
+
+
+            <ImageView
+                android:id="@+id/iv_clear"
+                android:layout_width="@dimen/search_bar_clear"
+                android:layout_height="@dimen/search_bar_clear"
+                android:layout_alignRight="@+id/edit_search"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/search_bar_space"
+                android:layout_marginEnd="@dimen/search_bar_space"
+                android:src="@mipmap/ic_search_delete" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!--声明viewModel对象，实际通过mBinding.setVariable(1, loginViewModel)传递过来-->
+        <variable
+            name="loginViewModel"
+            type="com.luoyang.androidfunDemo.mvvm.viewmodel.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".mvvm.view.MvvmActivity">
+
+
+        <EditText
+            android:id="@+id/etUserName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="user name"
+            android:textSize="30sp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/etPwd" />
+
+        <EditText
+            android:layout_marginBottom="20dp"
+            android:id="@+id/etPwd"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:hint="password"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnLogin" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="startLogin"
+            android:text="登录"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLoginState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="@{loginViewModel.result.code==200?loginViewModel.success:loginViewModel.failed}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

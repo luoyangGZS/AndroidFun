@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Android技术栈</string>
+
+    <string name="home_1">首页</string>
+    <string name="home_game">书库</string>
+    <string name="home_app">笔记</string>
+    <string name="home_setting">我的</string>
+    <string name="title_activity_main2">MainActivity2</string>
+
+    <string name="official_website">官网</string>
+    <string name="official_website_value">www.baidu.com</string>
+    <string name="manager_about">关于我们</string>
+    <string name="search_text">搜索</string>
+    <string name="title_activity_exposure_and_compose">ExposureAndComposeActivity</string>
+</resources>

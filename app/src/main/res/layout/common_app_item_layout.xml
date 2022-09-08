@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingStart="@dimen/group_layout_start"
+    android:paddingTop="@dimen/app_margin_top"
+    android:paddingBottom="@dimen/app_margin_bottom">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="@dimen/common_icon_width"
+        android:layout_height="@dimen/common_icon_height"
+        android:background="@color/color_primary_button"
+        android:layout_gravity="center" />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/common_icon_height"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/app_content_margin_start"
+        android:layout_marginEnd="@dimen/app_content_margin_end"
+        android:layout_toStartOf="@+id/download_button"
+        android:layout_toEndOf="@+id/iv_icon"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/color_primary_text_bold"
+            android:textSize="@dimen/dimen_primary_text_four"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginTop="@dimen/common_app_name_top"
+            android:ellipsize="end"
+            android:orientation="horizontal"
+            android:singleLine="true">
+
+            <TextView
+                android:id="@+id/apk_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_primary_text_second"
+                android:textSize="@dimen/dimen_primary_text_seven" />
+
+
+            <View
+                android:id="@+id/view_center"
+                android:layout_width="@dimen/app_divider_width"
+                android:layout_height="@dimen/app_divider_height"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/app_divider_margin"
+                android:layout_marginEnd="@dimen/app_divider_margin"
+                android:background="@color/color_primary_tip" />
+
+            <TextView
+                android:id="@+id/tv_count"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textColor="@color/color_primary_text_second"
+                android:textSize="@dimen/dimen_primary_text_seven" />
+        </LinearLayout>
+
+        <!--应用更新专用 start-->
+        <LinearLayout
+            android:id="@+id/version_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_version_old"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textColor="@color/color_primary_text_second"
+                android:textSize="@dimen/dimen_primary_text_seven" />
+
+            <TextView
+                android:id="@+id/tv_version_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/app_content_margin_start"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textColor="@color/color_primary_button"
+                android:textSize="@dimen/dimen_primary_text_seven" />
+        </LinearLayout>
+        <!--应用更新专用 end-->
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="2dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/color_primary_text_second"
+            android:textSize="@dimen/dimen_primary_text_seven"
+            tools:ignore="NotSibling" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_app_item_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="2dp"
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="false"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/download_button"
+        android:layout_width="@dimen/small_button_width"
+        android:layout_height="wrap_content"
+        android:text="安装"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/group_layout_end" />
+
+</RelativeLayout>
+

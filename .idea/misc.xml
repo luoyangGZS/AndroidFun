@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/git/AndroidFunDemo/aldldemo/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/git/AndroidFunDemo/aldldemo/src/main/res/layout/activity_ractivity.xml" value="0.11398963730569948" />
+        <entry key="..\:/git/AndroidFunDemo/aldldemo/src/main/res/layout/note_fragment.xml" value="0.1" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/base_shape_msg.xml" value="0.1" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/base_shape_notify_point.xml" value="0.1295" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/base_shape_unread.xml" value="0.131" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/cursor_tyle.xml" value="0.1" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/ic_search_bar.xml" value="0.1" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/ic_search_normal.xml" value="0.1" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/ic_toolbar_back.xml" value="0.1205" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/ic_toolbar_download.xml" value="0.1205" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/ic_toolbar_search.xml" value="0.1205" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/ic_toolbar_search_back.xml" value="0.1" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/icon_manage_settings.xml" value="0.1205" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/icon_my_coupons.xml" value="0.1205" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/icon_my_welfare.xml" value="0.1205" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/icon_suggest_feedback.xml" value="0.1205" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/play_anim.xml" value="0.1" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/shape_search_edit.xml" value="0.1" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/shape_user_background.xml" value="0.1205" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/view_ripple_borderless.xml" value="0.209" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/drawable/view_translate.xml" value="0.131" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/activity_launch_test.xml" value="0.1" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/activity_live_data.xml" value="0.25226449275362317" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/activity_main.xml" value="0.28125" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/activity_main_new.xml" value="0.2296875" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/activity_mvvm.xml" value="0.3" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/activity_mvvmactivity.xml" value="0.23645833333333333" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/activity_pay_test.xml" value="0.24114583333333334" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/activity_retrofit.xml" value="0.22" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/activity_show_provider.xml" value="0.2341485507246377" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/activity_vm.xml" value="0.3" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/animation_fragment.xml" value="0.2109375" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/base_item_bottom_bar.xml" value="0.25833333333333336" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/common_app_item_layout.xml" value="0.2368659420289855" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/home_fragment.xml" value="0.275" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/list_view_suggest.xml" value="0.215625" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/main_test.xml" value="0.22864583333333333" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/mine_fragment.xml" value="0.25271739130434784" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/mine_manage_item.xml" value="0.17604166666666668" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/note_fragment.xml" value="0.22083333333333333" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/play_anim.xml" value="0.2109375" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/search_bar.xml" value="0.16847826086956522" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/search_basic_title_bar.xml" value="0.2368659420289855" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/layout/suggest_item.xml" value="0.2368659420289855" />
+        <entry key="..\:/git/AndroidFunDemo/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/git/AndroidFunDemo/base/src/main/res/layout/activity_main.xml" value="0.20104166666666667" />
+        <entry key="..\:/git/AndroidFunDemo/note/src/main/res/layout/activity_main.xml" value="0.221875" />
+        <entry key="..\:/git/AndroidFunDemo/note/src/main/res/layout/note_fragment.xml" value="0.21510416666666668" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
