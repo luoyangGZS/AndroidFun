@@ -19,6 +19,7 @@ import com.luoyang.androidfunDemo.bean.DetailBean;
 import com.luoyang.androidfunDemo.bean.ItemBean;
 import com.luoyang.androidfunDemo.bean.SearchSuggestBean;
 import com.luoyang.androidfunDemo.retrofit.show.okhttp.OkhttpActivity;
+import com.luoyang.androidfunDemo.util.ThreadPoolUtil;
 import com.luoyang.androidfunDemo.util.Utils;
 import com.luoyang.base.BaseConstant;
 import com.luoyang.base.base.BaseActivity;
@@ -80,7 +81,7 @@ public class SearchSuggestAdapter extends BaseAdapter {
             TextView count = convertView.findViewById(R.id.tv_count);
             TextView description = convertView.findViewById(R.id.tv_content);
             RecyclerView mRvTag = convertView.findViewById(R.id.rv_app_item_tag);
-            Button buttonSmall = convertView.findViewById(R.id.download_button);
+//            Button buttonSmall = convertView.findViewById(R.id.download_button);
 
             title.setText(detailBean.getAppName());
 
@@ -107,19 +108,27 @@ public class SearchSuggestAdapter extends BaseAdapter {
                 count.setText(finalNumber);
             }
 
-            //这里两个曝光，会执行后一个曝光
-            ViewHelperKt.setEventOnExposure(convertView, detailBean.getAppName().hashCode(), 30000, 1, 1000,
-                    () -> {
-                        Log.e(BaseConstant.EXPOSURE, "setEventOnExposure " + detailBean.getAppName());
-                        return null;
-                    }
-            );
-            ExposureHelperKt.setOnExposureListener(convertView, detailBean.getPackageName().hashCode(), 30000, 1, 1000,
-                    () -> {
-                        Log.e(BaseConstant.EXPOSURE, "setOnExposureListener " + detailBean.getPackageName());
-                        return null;
-                    }
-            );
+            View finalConvertView = convertView;
+            //对卡顿s性能有影响
+            ThreadPoolUtil.post(new Runnable() {
+                @Override
+                public void run() {
+                    //这里两个曝光，会执行后一个曝光
+                    ViewHelperKt.setEventOnExposure(finalConvertView, detailBean.getAppName().hashCode(), 30000, 1, 1000,
+                            () -> {
+                                Log.e(BaseConstant.EXPOSURE, "setEventOnExposure " + detailBean.getAppName());
+                                return null;
+                            }
+                    );
+                    ExposureHelperKt.setOnExposureListener(finalConvertView, detailBean.getPackageName().hashCode(), 30000, 1, 1000,
+                            () -> {
+                                Log.e(BaseConstant.EXPOSURE, "setOnExposureListener " + detailBean.getPackageName());
+                                return null;
+                            }
+                    );
+                }
+            });
+
 
             return convertView;
         }
@@ -147,21 +156,27 @@ public class SearchSuggestAdapter extends BaseAdapter {
                 }
             });
 
-            //这里两个曝光，会执行后一个曝光
-            ExposureHelperKt.setOnExposureListener(convertView, text.hashCode(), 30000, 1, 1000,
-                    () -> {
-                        Log.e(BaseConstant.EXPOSURE, "setOnExposureListener sug" + text);
-                        return null;
-                    }
-            );
-            ViewHelperKt.setEventOnExposure(convertView, text.hashCode(), 30000, 1, 1000,
-                    () -> {
-                        Log.e(BaseConstant.EXPOSURE, "setEventOnExposure sug  " + text);
-                        return null;
-                    }
-            );
-        }
+            View finalConvertView1 = convertView;
+            ThreadPoolUtil.post(new Runnable() {
+                @Override
+                public void run() {
+                    //这里两个曝光，会执行后一个曝光
+                    ExposureHelperKt.setOnExposureListener(finalConvertView1, text.hashCode(), 30000, 1, 1000,
+                            () -> {
+                                Log.e(BaseConstant.EXPOSURE, "setOnExposureListener sug" + text);
+                                return null;
+                            }
+                    );
+                    ViewHelperKt.setEventOnExposure(finalConvertView1, text.hashCode(), 30000, 1, 1000,
+                            () -> {
+                                Log.e(BaseConstant.EXPOSURE, "setEventOnExposure sug  " + text);
+                                return null;
+                            }
+                    );
+                }
+            });
 
+        }
 
         return convertView;
 

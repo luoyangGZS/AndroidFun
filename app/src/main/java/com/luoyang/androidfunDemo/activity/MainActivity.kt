@@ -10,6 +10,8 @@ import com.luoyang.androidfunDemo.fragment.HomeFragment
 import com.luoyang.androidfunDemo.fragment.MineFragment
 import com.luoyang.androidfunDemo.ui.BottomBarLayout
 import com.luoyang.androidfunDemo.util.LaunchTimer
+import com.luoyang.androidfunDemo.util.ToastUtil
+import com.luoyang.androidfunDemo.util.Utils
 import com.luoyang.base.base.BaseActivity
 import com.luoyang.base.base.BaseFragment
 import com.luoyang.note.NoteFragment
@@ -66,6 +68,7 @@ class MainActivity : BaseActivity() {
 //        ThreadPoolUtil.post(TaskRunnable("1111111"))
 //        ThreadPoolUtil.post(TaskRunnable("222222"))
 
+        ToastUtil.toToast();
 
     }
 }

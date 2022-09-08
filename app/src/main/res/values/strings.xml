@@ -12,4 +12,22 @@
     <string name="manager_about">关于我们</string>
     <string name="search_text">搜索</string>
     <string name="title_activity_exposure_and_compose">ExposureAndComposeActivity</string>
+
+    <string name="no_storage_permission">未获取文件读取权限</string>
+    <string name="scanning_audio_file">正在扫描录音文件中</string>
+    <string name="error_scan_audio_file">扫描音频文件失败！</string>
+    <string name="scan_result">共%d个录音文件</string>
+    <string name="ready_sync_file">正准备上传音频文件%d个</string>
+    <string name="add_audio_count">添加音频(%d)</string>
+    <string name="dialog_title_file">文件细节</string>
+    <string name="dialog_positive">确定</string>
+    <string name="dialog_negative">文件细节</string>
+    <string name="file_info">"文件名: %s\r\n\n文件地址: %s\r\n\n文件打包时间: %s</string>
+    <string name="bar_title_audio">本地音频文件</string>
+    <string name="date_format">yyyy-MM-dd HH:mm:ss</string>
+    <string name="file_name">文件名</string>
+    <string name="file_size">文件大小</string>
+    <string name="file_absolute_path">文件地址</string>
+    <string name="scan_button_text">智能扫描</string>
+
 </resources>

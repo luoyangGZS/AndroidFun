@@ -2,8 +2,8 @@ package com.luoyang.androidfunDemo.retrofit
 
 import android.content.Context
 import android.text.TextUtils
-import android.util.Log
 import com.luoyang.androidfunDemo.Constant
+import com.luoyang.androidfunDemo.util.LogUtil
 import okhttp3.*
 import okio.Buffer
 import java.io.IOException
@@ -15,16 +15,20 @@ import java.nio.charset.StandardCharsets
  * @author luoyang
  * @date 2022/7/23
  */
-class NetInterceptor(context: Context, showRequestLog: Boolean, showResponseLog: Boolean)
-    : Interceptor {
+class NetInterceptor constructor(
+    context: Context,
+    showRequestLog: Boolean,
+    showResponseLog: Boolean
+) :
+    Interceptor {
     val TAG = "NetShopInterceptor"
 
-    //是否显示上传参数
-    private var showRequestLog = false
+        //是否显示上传参数
+    private var showRequestLog = showRequestLog
 
     //是否显示响应参数
-    private var showResponseLog = false
-    private lateinit var context: Context
+    private var showResponseLog = showResponseLog
+    private var context: Context = context
 
 
     override fun intercept(chain: Interceptor.Chain): Response? {
@@ -32,15 +36,20 @@ class NetInterceptor(context: Context, showRequestLog: Boolean, showResponseLog:
         var response: Response? = null
         //判断是get请求还是post请求
         val oldUrl = request.url().toString()
+        LogUtil.d("oldUrl: " + oldUrl)
         var newUrl = ""
         var bodyStr: String? = ""
         if ("GET" == request.method()) {
+            LogUtil.d("1111111111111111111")
             //get请求 添加请求的通用参数
             newUrl = CommonInfoProducer.getInstance(context).appendCommonParameter(oldUrl)
+            LogUtil.d("newUrl" + newUrl)
             request = request.newBuilder().tag(Constant.VIEW_PATH).get().url(newUrl).build()
         } else {
             //拿到请求的body和url进行加密
+            LogUtil.d("222222222222222222222222")
             val requestBody = request.body()
+            LogUtil.d("333333333333333")
             if (requestBody != null) {
                 val mediaType = requestBody.contentType()
                 if (mediaType != null) {
@@ -54,10 +63,13 @@ class NetInterceptor(context: Context, showRequestLog: Boolean, showResponseLog:
             } else {
                 CommonInfoProducer.getInstance(context).appendCommonParameter(oldUrl)
             }
+            LogUtil.d("newUrl" + newUrl)
             request = request.newBuilder().url(newUrl).post(requestBody).build()
         }
         return try {
+
             response = chain.proceed(request)
+            LogUtil.d(response.toString())
             var clone: Response? = null
             var content: String? = null
             if (response != null) {
@@ -70,13 +82,14 @@ class NetInterceptor(context: Context, showRequestLog: Boolean, showResponseLog:
             }
             //是否显示请求日志
             if (showRequestLog) {
-                LogForRequest(request)
+                logForRequest(request)
             }
             LogForResponse(
                 clone!!.newBuilder()
                     .body(ResponseBody.create(clone.body()!!.contentType(), content)).build()
             )
         } catch (e: Exception) {
+            LogUtil.e(e.message)
             throw e
         }
     }
@@ -84,7 +97,7 @@ class NetInterceptor(context: Context, showRequestLog: Boolean, showResponseLog:
     private fun printResponseLog(msg: String) {
         //是否显示响应日志
         if (showResponseLog) {
-            Log.i(TAG, msg)
+            LogUtil.d(msg)
         }
     }
 
@@ -134,21 +147,21 @@ class NetInterceptor(context: Context, showRequestLog: Boolean, showResponseLog:
      *
      * @param request
      */
-    private fun LogForRequest(request: Request) {
-        val RequestStr = StringBuffer()
+    private fun logForRequest(request: Request) {
+        val requestStr = StringBuffer()
         try {
             val url = request.url().toString()
-            RequestStr.append("\n========Request(Start)=======\n")
-            RequestStr.append(
+            requestStr.append("\n========Request(Start)=======\n")
+            requestStr.append(
                 """
                 Request->Method: ${request.method()}
 
                 """.trimIndent()
             )
-            RequestStr.append("Request->URL:$url\n")
+            requestStr.append("Request->URL:$url\n")
             val headers = request.headers()
             if (headers != null && headers.size() > 0) {
-                RequestStr.append("Request->headers:\n$headers")
+                requestStr.append("Request->headers:\n$headers")
             }
             val requestBody = request.body()
             if (requestBody != null) {
@@ -156,21 +169,20 @@ class NetInterceptor(context: Context, showRequestLog: Boolean, showResponseLog:
                 if (mediaType != null) {
                     //RequestStr.append("Request->mediaType:" + mediaType.toString() + "\n");
                     if (isText(mediaType)) {
-                        RequestStr.append(
+                        requestStr.append(
                             """
                             Request->parameter:${bodyToString(requestBody, mediaType)}
 
                             """.trimIndent()
                         )
                     } else {
-                        RequestStr.append("Request->parameter: RequestBody's content : maybe [file part] , too large too print , ignored! \n\n")
+                        requestStr.append("Request->parameter: RequestBody's content : maybe [file part] , too large too print , ignored! \n\n")
                     }
                 }
             }
-            RequestStr.append("========Request(End)=======")
-            Log.d(
-                TAG,
-                RequestStr.toString()
+            requestStr.append("========Request(End)=======")
+            LogUtil.d(
+                requestStr.toString()
             )
         } catch (e: java.lang.Exception) {
             e.printStackTrace()

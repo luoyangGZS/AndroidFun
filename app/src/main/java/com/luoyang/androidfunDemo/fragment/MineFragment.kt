@@ -10,12 +10,15 @@ import com.luoyang.androidfunDemo.activity.ShowProviderActivity
 import com.luoyang.androidfunDemo.adapter.ManageContentAdapter
 import com.luoyang.androidfunDemo.bean.MineItemBean
 import com.luoyang.androidfunDemo.compose.list.ComposeListActivity
+import com.luoyang.androidfunDemo.filescan.FileScanActivity
 import com.luoyang.androidfunDemo.ipaynowdemo.PayTestActivity
 import com.luoyang.androidfunDemo.launch.LaunchTestActivity
 import com.luoyang.androidfunDemo.livedata.LiveDataActivity
 import com.luoyang.androidfunDemo.mvvm.view.MvvmActivity
+import com.luoyang.androidfunDemo.notification.NotificationActivity
 import com.luoyang.androidfunDemo.retrofit.show.HttpURLActivity
 import com.luoyang.androidfunDemo.retrofit.show.okhttp.OkhttpActivity
+import com.luoyang.androidfunDemo.webview.WebViewActivity
 import com.luoyang.base.base.BaseFragment
 
 /**
@@ -106,6 +109,30 @@ class MineFragment : BaseFragment() {
             R.drawable.icon_my_coupons,
             mActivity,
             PayTestActivity::class.java
+        )
+        dataList.add(data)
+
+        data = MineItemBean(
+            "WebView",
+            R.drawable.icon_my_coupons,
+            mActivity,
+            WebViewActivity::class.java
+        )
+        dataList.add(data)
+
+        data = MineItemBean(
+            "Notification",
+            R.drawable.icon_my_coupons,
+            mActivity,
+            NotificationActivity::class.java
+        )
+        dataList.add(data)
+
+        data = MineItemBean(
+            "FileScan",
+            R.drawable.icon_my_coupons,
+            mActivity,
+            FileScanActivity::class.java
         )
         dataList.add(data)
 

@@ -8,10 +8,12 @@ import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.luoyang.androidfunDemo.MainApplication;
 import com.luoyang.base.base.BaseActivity;
@@ -35,6 +37,7 @@ public class Utils {
     public static String getString(int resId) {
         return getResources().getString(resId);
     }
+
 
     /**
      * 连接网络是否有效
@@ -243,6 +246,7 @@ public class Utils {
 
     private static final DecimalFormat fileIntegerFormat = new DecimalFormat("#0");
     private static final DecimalFormat fileDecimalFormat = new DecimalFormat("#0.##");
+
     /**
      * 单位换算
      *

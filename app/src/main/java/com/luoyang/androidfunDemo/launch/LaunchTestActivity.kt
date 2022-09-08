@@ -11,7 +11,11 @@ import com.luoyang.androidfunDemo.livedata.UserViewModel
 import com.luoyang.androidfunDemo.singleton.SingletonSync
 import com.luoyang.base.base.BaseActivity
 import kotlinx.coroutines.*
+import okhttp3.*
+import java.io.IOException
 import java.util.*
+import java.util.Calendar.SECOND
+import java.util.concurrent.TimeUnit
 
 class LaunchTestActivity : BaseActivity() {
 
@@ -28,6 +32,7 @@ class LaunchTestActivity : BaseActivity() {
 
         SingletonSync.getInstance(this);
 //        testBlockLaunch()
+        testGlobalLaunchOkhttp()
         testGlobalLaunch()
         Log.d(TAG, "testLet ${testLet()}")
         Log.d(TAG, "testWith ${testWith()}")
@@ -40,6 +45,65 @@ class LaunchTestActivity : BaseActivity() {
     private fun initView() {
         mLaunchText = findViewById(R.id.launch_text)
     }
+
+    private fun testGlobalLaunchOkhttp() {
+        val buffer = StringBuffer()
+        GlobalScope.launch(Dispatchers.Main) {//全局作用域用于启动在整个应用程序生命周期内运行且不会过早取消的顶级协程
+
+            launch() {//lauch也是协程构建器，启动了一个新协程,我们称它为coroutine#1， 它是coroutine#main的子协程
+//            launch(Dispatchers.IO) {//lauch也是协程构建器，启动了一个新协程,我们称它为coroutine#1， 它是coroutine#main的子协程
+                buffer.append("GlobalLaunch1 started \n")
+                Log.d(TAG, "GlobalLaunch1 started")//打印信息
+                postDataWithParams()//网络请求
+                buffer.append("GlobalLaunch1 ended \n")
+                Log.d(TAG, "GlobalLaunch1 ended")//打印信息
+                mLaunchText.text = buffer.toString()
+            }
+
+        }
+    }
+
+    private fun postDataWithParams() {
+        Log.d(TAG, "postDataWithParams call");
+        val client = OkHttpClient()
+//        val formBody = FormBody.Builder();//创建表单请求体
+//        formBody.add("username", "zhangsan");//传递键值对参数
+        val request = Request.Builder()//创建Request 对象。
+            .url("https://www.baidu.com/")
+//            .post(formBody.build())//传递请求体
+            .get()//传递请求体
+            .build();
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                Log.d(TAG, "onFailure call$call");
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                Log.d(TAG, "onResponse call$call");
+                Log.d(TAG, "onResponse Response code{${response.code()}}");
+
+                val builder = response.newBuilder();
+                val content: String = builder.build().body().toString()
+                Log.d(TAG, "onResponse Response content {$content}}");
+            }
+
+        })
+
+
+        val builder = OkHttpClient.Builder()
+        builder.connectTimeout(10000,TimeUnit.MILLISECONDS)
+        val client1 = builder.build();
+        client1.newCall(request).enqueue(object :Callback{
+            override fun onFailure(call: Call, e: IOException) {
+                Log.d(TAG, "onFailure call$call");
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                Log.d(TAG, "onResponse call$call");
+            }
+        })
+    }
+
 
     /**
      * 改变隔壁界面，livedataActivity的数据

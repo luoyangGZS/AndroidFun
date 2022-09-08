@@ -11,7 +11,6 @@ import android.os.Message
 import android.util.Log
 import android.widget.TextView
 import com.luoyang.androidfunDemo.R
-import com.luoyang.androidfunDemo.util.ThreadPoolUtil
 import com.luoyang.base.base.BaseActivity
 import com.luoyang.note.DBHelper
 

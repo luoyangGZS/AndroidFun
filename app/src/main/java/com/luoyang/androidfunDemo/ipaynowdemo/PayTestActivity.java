@@ -175,6 +175,8 @@ public class PayTestActivity extends AppCompatActivity implements View.OnClickLi
     protected void onDestroy() {
         super.onDestroy();
         mIPayNowPlugin.onActivityDestroy();
-        mMessageAsyncTask.cancel(true);
+        if (mMessageAsyncTask != null) {
+            mMessageAsyncTask.cancel(true);
+        }
     }
 }
