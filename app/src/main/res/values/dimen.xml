@@ -61,22 +61,39 @@
     <!--一级标题字体大小-->
     <dimen name="dimen_text_big">30sp</dimen>
 
-    <dimen name="dimen_primary_text_first">22dp</dimen>
+    <!--所有涉及字体尺寸大小-->
+    <!--一级标题字体大小-->
+    <dimen name="dimen_primary_text_first">22sp</dimen>
     <!--二级标题字体大小-->
-    <dimen name="dimen_primary_text_two">18dp</dimen>
+    <dimen name="dimen_primary_text_two">18sp</dimen>
     <!--三级标题字体大小-->
-    <dimen name="dimen_primary_text_three">16dp</dimen>
+    <dimen name="dimen_primary_text_three">16sp</dimen>
     <!-- 四级标题字体大小-->
-    <dimen name="dimen_primary_text_four">15dp</dimen>
+    <dimen name="dimen_primary_text_four">15sp</dimen>
     <!--五级标题字体大小-->
-    <dimen name="dimen_primary_text_five">14dp</dimen>
+    <dimen name="dimen_primary_text_five">14sp</dimen>
     <!--六级标题字体大小-->
-    <dimen name="dimen_primary_text_six">12dp</dimen>
+    <dimen name="dimen_primary_text_six">12sp</dimen>
     <!--七级标题字体大小-->
-    <dimen name="dimen_primary_text_seven">11dp</dimen>
+    <dimen name="dimen_primary_text_seven">11sp</dimen>
     <!--八标题字体大小-->
-    <dimen name="dimen_primary_text_eight">10dp</dimen>
+    <dimen name="dimen_primary_text_eight">10sp</dimen>
     <!--九标题字体大小-->
-    <dimen name="dimen_primary_text_nine">9dp</dimen>
+    <dimen name="dimen_primary_text_nine">9sp</dimen>
+
+    <!-- 所有公共布局边框-->
+    <dimen name="group_layout_top">15dp</dimen>
+    <dimen name="group_layout_bottom">15dp</dimen>
+    <dimen name="group_space">8dp</dimen>
+    <dimen name="view_height">0.5dp</dimen>
+
+    <!-- bar-->
+    <dimen name="tar_height">48dp</dimen>
+    <dimen name="tar_title_margin_start">30dp</dimen>
+
+    <!-- audio_file_item-->
+    <dimen name="audio_file_item_height">63dp</dimen>
+    <dimen name="audio_file_icon">48dp</dimen>
+    <dimen name="audio_name_max_width">190dp</dimen>
 
 </resources>

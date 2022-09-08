@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/tar_height"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/btn_title_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/group_layout_start"
+            android:background="@drawable/icon_toolbar_back"
+            android:gravity="start"
+            tools:ignore="PxUsage" />
+
+        <TextView
+            android:id="@+id/tv_top_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/btn_title_left"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/tar_title_margin_start"
+            android:lines="1"
+            android:text="@string/bar_title_audio"
+            android:textColor="@color/color_bar_title"
+            android:textSize="@dimen/dimen_primary_text_two"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btn_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/group_space"
+            android:layout_marginTop="@dimen/group_space"
+            android:layout_marginEnd="@dimen/group_layout_end"
+            android:layout_marginBottom="@dimen/group_space"
+            android:background="@drawable/shape_add_audio_button"
+            android:gravity="center"
+            android:text="@string/add_audio_count"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_primary_text_three" />
+    </RelativeLayout>
+
+</LinearLayout>

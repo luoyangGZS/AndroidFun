@@ -35,4 +35,11 @@
     <!--提示语,下滑线颜色-->
     <color name="color_primary_tip">#e4e9ef</color>
 
+    <color name="tv_text_add_audio_nor">#ffffff</color>
+    <color name="tv_text_add_audio_pre">#7891A5</color>
+    <color name="tv_text_add_audio_deep_pre">#587A8A</color>
+    <color name="color_bar_title">#394b61</color>
+    <color name="color_file_name">#767676</color>
+    <color name="color_text_tip">#adadad</color>
+
 </resources>

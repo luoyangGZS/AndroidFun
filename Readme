@@ -7,9 +7,14 @@ mvvm
 aidl
 协程
 动画
-fragment底部按钮切换
+
+自定义view
+fragment切换
 现在支付sdk接入demo
 AsyncTask
 ThreadLocal
 ThreadPool
-自定义view 
+
+WebView js和android 互相调用
+Toast和snackbar
+扫描文件功能
